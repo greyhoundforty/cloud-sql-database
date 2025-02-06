@@ -22,7 +22,7 @@ app = Flask(__name__)
 
 # get service information if on IBM Cloud Platform
 if 'DASHDB_SSLDSN' in os.environ:
-    db2cred = os.getenv('DASHDB_SSLDSN')
+    db2cred = os.getenv('DASHDB_CONNECTION')
 else:
     # log error, but continue - it might be before service binding
     app.logger.error('No Db2 credentials configured.')
